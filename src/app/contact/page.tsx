@@ -138,7 +138,7 @@ export default function Contact() {
                   <p className="text-xs text-center text-gray-500">
                     By submitting this form, you agree to our
                     <a
-                      href="/privacy-policy.html"
+                      href="/privacy-policy"
                       className="text-purple-600 hover:text-purple-700"
                     >
                       Privacy Policy

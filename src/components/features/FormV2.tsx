@@ -75,7 +75,7 @@ export const LeadForm = () => {
             <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
               How much debt do you have?
             </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
+            <div className="grid md:grid-cols-2 gap-4 w-full">
               <FormButton
                 type="button"
                 onClick={() => {
@@ -116,55 +116,57 @@ export const LeadForm = () => {
           </div>
         </Activity>
         <Activity mode={step === 2 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
-              What is your full name?
-            </p>
-            <input
-              type="text"
-              className="w-full border border-gray-300 rounded-md p-3 text-lg"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              placeholder="Enter your full name"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 md:my-10">
+            <div>
+              <p className="text-green-700 font-bold text-xl mb-2 md:mb-4">
+                What is your full name?
+              </p>
+              <input
+                type="text"
+                className="w-full border border-gray-300 rounded-md p-3 text-lg"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div>
+              <p className="text-green-700 font-bold text-xl mb-2 md:mb-4">
+                What is your Email?
+              </p>
+              <input
+                type="email"
+                className="w-full border border-gray-300 rounded-md p-3 text-lg"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                placeholder="Enter your email"
+              />
+            </div>
+            <div>
+              <p className="text-green-700 font-bold text-xl text-nowrap mb-2 md:mb-4">
+                What is your Phone Number?
+              </p>
+              <input
+                type="tel"
+                className="w-full border border-gray-300 rounded-md p-3 text-lg"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+                placeholder="Enter your phone number"
+              />
+            </div>
           </div>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
-              What is your Email?
-            </p>
-            <input
-              type="email"
-              className="w-full border border-gray-300 rounded-md p-3 text-lg"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              placeholder="Enter your email"
-            />
-          </div>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
-              What is your Phone Number?
-            </p>
-            <input
-              type="tel"
-              className="w-full border border-gray-300 rounded-md p-3 text-lg"
-              value={formData.phone}
-              onChange={(e) =>
-                setFormData({ ...formData, phone: e.target.value })
-              }
-              placeholder="Enter your phone number"
-            />
-            <FormButton
-              type="submit"
-              className="mt-6 w-max mx-auto"
-              disabled={!formData.phone.trim()}
-            >
-              Check Eligibility & Submit
-            </FormButton>
-          </div>
+          <FormButton
+            type="submit"
+            className="mt-6 w-max mx-auto"
+            disabled={!formData.phone.trim()}
+          >
+            Check Eligibility & Submit
+          </FormButton>
         </Activity>
 
         <div className="flex justify-center items-center">

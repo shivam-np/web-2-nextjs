@@ -15,7 +15,7 @@ export default function Dro() {
               A solution for those with low income and few assets
             </p>
             <NavLink
-              href="/index.html#consultation"
+              href="/#consultation"
               className="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-full font-semibold text-lg hover:bg-purple-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
             >
               Check Your Eligibility
