@@ -124,6 +124,7 @@ export const LeadForm = () => {
               <input
                 type="text"
                 className="w-full border border-gray-300 rounded-md p-3 text-lg"
+                required
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
@@ -139,6 +140,7 @@ export const LeadForm = () => {
                 type="email"
                 className="w-full border border-gray-300 rounded-md p-3 text-lg"
                 value={formData.email}
+                required
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
@@ -153,6 +155,9 @@ export const LeadForm = () => {
                 type="tel"
                 className="w-full border border-gray-300 rounded-md p-3 text-lg"
                 value={formData.phone}
+                pattern="[0-9]{10,15}"
+                required
+                title="Please enter a valid phone number"
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
@@ -163,7 +168,11 @@ export const LeadForm = () => {
           <FormButton
             type="submit"
             className="mt-6 w-max mx-auto"
-            disabled={!formData.phone.trim()}
+            disabled={
+              !formData.phone.trim() ||
+              !formData.email.trim() ||
+              !formData.name.trim()
+            }
           >
             Check Eligibility & Submit
           </FormButton>

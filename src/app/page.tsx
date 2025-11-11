@@ -5,7 +5,6 @@ import { TrustIcon } from "@/assets/icons/Trust";
 import { TwoIcon } from "@/assets/icons/TwoIcon";
 import { DebtCard } from "@/components/cards/DebtCard";
 import { LeadForm } from "@/components/features/FormV2";
-import { FormButton } from "@/components/ui/FormButton";
 import { NavLink } from "@/components/ui/NavLink";
 import {
   Banknote,
@@ -17,6 +16,7 @@ import {
   MoveRight,
 } from "lucide-react";
 import Image from "next/image";
+import * as motion from "motion/react-client";
 
 export default function Home() {
   return (
@@ -29,14 +29,18 @@ export default function Home() {
             className="container mx-auto px-4 relative min-h-[40vh] flex flex-col justify-center items-center"
             data-aos="fade-up"
           >
-            <h1 className="text-3xl md:text-6xl max-w-[900px] font-semibold md:font-bold text-center leading-tight">
+            <motion.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+              className="text-3xl md:text-6xl max-w-[900px] font-semibold md:font-bold text-center leading-tight"
+            >
               <span className="block relative mb-4">
                 <span className="absolute z-0 -inset-3 bg-orange-500 rounded-md"></span>
                 <span className="z-1 relative">Struggling with debt?</span>
               </span>
               Talk to experts with <br />
               trusted support.
-            </h1>
+            </motion.h1>
             <div className="max-w-[500px]">
               <p className="mt-6 md:text-2xl text-purple-100 flex items-center gap-2">
                 <OneIcon />
@@ -64,15 +68,27 @@ export default function Home() {
 
         {/* Form Section */}
         <section className="bg-white p-4 md:p-10">
-          <div className="max-w-7xl mx-auto shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-tr-[3rem] md:rounded-tr-[8rem] rounded-bl-[3rem] md:rounded-bl-[8rem] overflow-hidden flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{
+              scale: 1,
+              opacity: 1,
+              transition: { duration: 0.5 },
+            }}
+            className="max-w-7xl mx-auto shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-tr-[3rem] md:rounded-tr-[8rem] rounded-bl-[3rem] md:rounded-bl-[8rem] overflow-hidden flex items-center justify-center"
+          >
             <LeadForm />
-          </div>
+          </motion.div>
         </section>
 
         {/* Hero Section */}
         <section className="bg-purple-50">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  md:gap-8">
-            <div className="w-full h-full relative">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="w-full h-full relative"
+            >
               <Image
                 src={"/hero-image.jpeg"}
                 width={1800}
@@ -81,8 +97,12 @@ export default function Home() {
                 style={{ height: "100%", width: "auto" }}
                 className="w-full h-full object-cover object-center"
               />
-            </div>
-            <div className="p-4 md:p-8 flex flex-col justify-center gap-2">
+            </motion.div>
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
+              className="p-4 md:p-8 flex flex-col justify-center gap-2"
+            >
               <h2 className="text-4xl font-bold text-purple-700">
                 Let&apos;s overcome debt together. Real help. Real relief.
               </h2>
@@ -107,13 +127,17 @@ export default function Home() {
               >
                 Get Debt Help Now
               </NavLink>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Main Section */}
         <section className="container mx-auto px-4 py-10 md:py-24">
-          <div className="grid gap-16 items-center max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+            className="grid gap-16 items-center max-w-7xl mx-auto"
+          >
             <div data-aos="fade-right">
               <h2 className="text-4xl font-bold text-purple-700 mb-6">
                 Are You Struggling with Debt?
@@ -151,11 +175,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Debt Solutions Section */}
-        <section className="py-16 bg-gray-50">
+        <motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          className="py-16 bg-gray-50"
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -209,19 +237,30 @@ export default function Home() {
               />
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* What is IVA Section */}
         <section className="bg-white py-24">
           <div className="container mx-auto px-4 max-w-7xl">
-            <h2
+            <motion.h2
+              initial={{ y: -50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
               className="text-4xl font-bold text-purple-700 mb-16 text-center"
               data-aos="fade-up"
             >
               Understanding IVA
-            </h2>
+            </motion.h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative" data-aos="fade-right">
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="relative"
+                data-aos="fade-right"
+              >
                 <div className="bg-purple-100 rounded-2xl p-8 relative z-10">
                   <h3 className="text-2xl font-bold text-purple-700 mb-6">
                     What is an IVA?
@@ -255,8 +294,17 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-full h-full bg-purple-200 rounded-2xl -z-10"></div>
-              </div>
-              <div className="grid grid-cols-2 gap-6" data-aos="fade-left">
+              </motion.div>
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                }}
+                className="grid grid-cols-2 gap-6"
+                data-aos="fade-left"
+              >
                 <div className="bg-green-50 p-6 rounded-xl hover-scale">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                     <CirclePoundSterling className="w-6 h-6 text-green-600" />
@@ -301,13 +349,17 @@ export default function Home() {
                     Clear timeline to become debt-free
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* IVA Benefits Section */}
-        <section className="bg-purple-50 py-24">
+        <motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          className="bg-purple-50 py-24"
+        >
           <div className="container mx-auto px-4 max-w-7xl">
             <h2
               className="text-4xl font-bold text-purple-700 mb-16 text-center"
@@ -369,10 +421,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Eligibility Section */}
-        <section className="bg-white py-10 md:py-24">
+        <motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          className="bg-white py-10 md:py-24"
+        >
           <div className="container mx-auto px-4 max-w-7xl">
             <h2
               className="text-4xl font-bold text-purple-700 mb-16 text-center"
@@ -442,10 +498,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* MoneyHelper */}
-        <div className="text-center my-8 flex items-center flex-col md:flex-row gap-8 md:w-max md:max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+          className="text-center my-8 flex items-center flex-col md:flex-row gap-8 md:w-max md:max-w-7xl mx-auto"
+        >
           <NavLink href="https://www.moneyhelper.org.uk">
             <MoneyHelp />
           </NavLink>
@@ -460,10 +520,14 @@ export default function Home() {
             </a>
             . We provide info and connect you to solutions.
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Info Section */}
-        <section className="gradient-bg text-white py-24 relative overflow-hidden">
+        <motion.section
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+          className="gradient-bg text-white py-24 relative overflow-hidden"
+        >
           <div
             className="container mx-auto text-center px-4"
             data-aos="fade-up"
@@ -483,7 +547,7 @@ export default function Home() {
               <MoveRight className="w-5 h-5 ml-2" />
             </NavLink>
           </div>
-        </section>
+        </motion.section>
       </div>
     </main>
   );
