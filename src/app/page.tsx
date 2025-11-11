@@ -5,6 +5,7 @@ import { TrustIcon } from "@/assets/icons/Trust";
 import { TwoIcon } from "@/assets/icons/TwoIcon";
 import { DebtCard } from "@/components/cards/DebtCard";
 import { LeadForm } from "@/components/features/FormV2";
+import { FormButton } from "@/components/ui/FormButton";
 import { NavLink } from "@/components/ui/NavLink";
 import {
   Banknote,
@@ -15,6 +16,7 @@ import {
   House,
   MoveRight,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -61,14 +63,56 @@ export default function Home() {
         </header>
 
         {/* Form Section */}
-        <section className="bg-white p-5">
+        <section className="bg-white p-4 md:p-10">
           <div className="max-w-7xl mx-auto shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-tr-[3rem] md:rounded-tr-[8rem] rounded-bl-[3rem] md:rounded-bl-[8rem] overflow-hidden flex items-center justify-center">
             <LeadForm />
           </div>
         </section>
 
+        {/* Hero Section */}
+        <section className="bg-purple-50">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  md:gap-8">
+            <div className="w-full h-full relative">
+              <Image
+                src={"/hero-image.jpeg"}
+                width={1800}
+                height={1000}
+                alt="Hero Image"
+                style={{ height: "100%", width: "auto" }}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="p-4 md:p-8 flex flex-col justify-center gap-2">
+              <h2 className="text-4xl font-bold text-purple-700">
+                Let&apos;s overcome debt together. Real help. Real relief.
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Thousands across the UK are burdened by debt, and it can feel
+                overwhelming. At My Debt Relief, we&apos;re here to guide you
+                with clear, practical steps so you can breathe easier and take
+                control again.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Every debt problem has a solution. Whether it&apos;s credit
+                cards, loans, or household bills we&apos;ll help you find the
+                right plan to get back on track. Don&apos;t ignore the stress;
+                take the first step today towards a debt-free future.
+              </p>
+              <p className="text-xl text-gray-600 mb-4 leading-relaxed font-semibold">
+                Get your free debt assessment now
+              </p>
+              <NavLink
+                href="#consultation"
+                className="inline-flex items-center justify-center border-2 px-6 py-4 bg-green-700 text-white rounded-full hover:bg-white hover:text-green-700 transition-colors duration-300 text-xl font-semibold"
+              >
+                Get Debt Help Now
+              </NavLink>
+            </div>
+          </div>
+        </section>
+
         {/* Main Section */}
-        <section className="container mx-auto px-4 py-24">
+        <section className="container mx-auto px-4 py-10 md:py-24">
           <div className="grid gap-16 items-center max-w-7xl mx-auto">
             <div data-aos="fade-right">
               <h2 className="text-4xl font-bold text-purple-700 mb-6">
@@ -328,7 +372,7 @@ export default function Home() {
         </section>
 
         {/* Eligibility Section */}
-        <section className="bg-white py-24">
+        <section className="bg-white py-10 md:py-24">
           <div className="container mx-auto px-4 max-w-7xl">
             <h2
               className="text-4xl font-bold text-purple-700 mb-16 text-center"

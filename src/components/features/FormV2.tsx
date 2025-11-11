@@ -58,7 +58,7 @@ export const LeadForm = () => {
   return (
     <div
       id="consultation"
-      className="bg-white p-8 md:p-10 w-full mx-auto transition-all duration-300 box-shadow-custom flex flex-col items-center justify-center relative"
+      className="bg-white p-4 md:p-10 w-full mx-auto transition-all duration-300 box-shadow-custom flex flex-col items-center justify-center relative"
     >
       <p className="text-xl text-green-700 font-semibold text-center my-2">
         Step {step} of {TOTAL_STEPS}

@@ -2,7 +2,7 @@ import { NavLink } from "@/components/ui/NavLink";
 
 export default function NotFound() {
   return (
-    <main className="pt-10 px-4 min-h-[100vh] flex flex-col items-center justify-center gap-6">
+    <main className="pt-10 px-4 min-h-screen flex flex-col items-center justify-center gap-6">
       <h1 className="text-4xl font-bold text-green-700">
         404 - Page Not Found
       </h1>
