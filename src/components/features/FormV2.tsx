@@ -7,7 +7,7 @@ import { FormButton } from "../ui/FormButton";
 import { Button } from "../ui/Button";
 import { Loader } from "lucide-react";
 
-const TOTAL_STEPS = 9;
+const TOTAL_STEPS = 2;
 const SUBMIT_URL =
   "https://script.google.com/macros/s/AKfycbykMVk3JRdJgSRoaX8oIzRIddO0zmV7iUeVNIRPUAqZfMeANYmdetAJdHZmdN7EXnZUsw/exec";
 
@@ -20,11 +20,6 @@ export const LeadForm = () => {
     email: "",
     phone: "",
     debt: "",
-    goal: "",
-    type: "",
-    concern: "",
-    propertyType: "",
-    employmentStatus: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -122,358 +117,7 @@ export const LeadForm = () => {
         </Activity>
         <Activity mode={step === 2 ? "visible" : "hidden"}>
           <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
-              What are you hoping to achieve by getting debt advice?
-            </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    goal: "Write off unsecured debt",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Write off unsecured debt
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    goal: "One affordable monthly payment",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                One affordable monthly payment
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({ ...formData, goal: "Keep my home and car" });
-                  setStep(step + 1);
-                }}
-              >
-                Keep my home and car
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    goal: "Freeze interest and charges",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Freeze interest and charges
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    goal: "Prevent legal action",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Prevent legal action
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    goal: "I want all of the above",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                I want all of the above
-              </FormButton>
-            </div>
-          </div>
-        </Activity>
-        <Activity mode={step === 3 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
-              Which debt are you most worried about?
-            </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    type: "Credit Card",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Credit Card
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    type: "Loan",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Loan
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({ ...formData, type: "Overdraft" });
-                  setStep(step + 1);
-                }}
-              >
-                Overdraft
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    type: "Store Card",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Store Card
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    type: "Council Tax",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Council Tax
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    type: "Other",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Other
-              </FormButton>
-            </div>
-          </div>
-        </Activity>
-        <Activity mode={step === 4 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
-              What is your biggest concern about your debt?
-            </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Unable to pay bills",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Unable to pay bills
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Creditor Hassle",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Creditor Hassle
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Relying on credit cards/loans",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Relying on credit cards/loans
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Unaffordable repayments",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Unaffordable repayments
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Losing your home",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Losing your home
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    concern: "Other",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Other
-              </FormButton>
-            </div>
-          </div>
-        </Activity>
-        <Activity mode={step === 5 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
-              What type of property do you live in?
-            </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    propertyType: "Rented",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Rented
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    propertyType: "Private Rented",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Private Rented
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    propertyType: "Living with Parents",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Living with Parents
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    propertyType: "Owned",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Owned
-              </FormButton>
-            </div>
-          </div>
-        </Activity>
-        <Activity mode={step === 6 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
-              What&apos;s your employment status?
-            </p>
-            <div className="grid grid-cols-2 gap-4 w-full">
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    employmentStatus: "Employed",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Employed
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    employmentStatus: "Self-Employed",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Self-Employed
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    employmentStatus: "Retired",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Retired
-              </FormButton>
-              <FormButton
-                type="button"
-                onClick={() => {
-                  setFormData({
-                    ...formData,
-                    employmentStatus: "Unemployed",
-                  });
-                  setStep(step + 1);
-                }}
-              >
-                Unemployed
-              </FormButton>
-            </div>
-          </div>
-        </Activity>
-        <Activity mode={step === 7 ? "visible" : "hidden"}>
-          <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
+            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
               What is your full name?
             </p>
             <input
@@ -485,19 +129,9 @@ export const LeadForm = () => {
               }
               placeholder="Enter your full name"
             />
-            <FormButton
-              type="button"
-              className="mt-6 w-max mx-auto"
-              onClick={() => setStep(step + 1)}
-              disabled={!formData.name.trim()}
-            >
-              Next Question
-            </FormButton>
           </div>
-        </Activity>
-        <Activity mode={step === 8 ? "visible" : "hidden"}>
           <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
+            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
               What is your Email?
             </p>
             <input
@@ -509,19 +143,9 @@ export const LeadForm = () => {
               }
               placeholder="Enter your email"
             />
-            <FormButton
-              type="button"
-              className="mt-6 w-max mx-auto"
-              onClick={() => setStep(step + 1)}
-              disabled={!formData.email.trim()}
-            >
-              Next Question
-            </FormButton>
           </div>
-        </Activity>
-        <Activity mode={step === 9 ? "visible" : "hidden"}>
           <div>
-            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-8">
+            <p className="text-green-700 font-bold text-2xl text-center mb-2 md:mb-4">
               What is your Phone Number?
             </p>
             <input
@@ -536,7 +160,6 @@ export const LeadForm = () => {
             <FormButton
               type="submit"
               className="mt-6 w-max mx-auto"
-              onClick={handleSubmit}
               disabled={!formData.phone.trim()}
             >
               Check Eligibility & Submit
