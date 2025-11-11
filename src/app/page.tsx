@@ -4,7 +4,7 @@ import { ThreeIcon } from "@/assets/icons/ThreeIcon";
 import { TrustIcon } from "@/assets/icons/Trust";
 import { TwoIcon } from "@/assets/icons/TwoIcon";
 import { DebtCard } from "@/components/cards/DebtCard";
-import { LeadForm } from "@/components/features/Form";
+import { LeadForm } from "@/components/features/FormV2";
 import { NavLink } from "@/components/ui/NavLink";
 import {
   Banknote,
@@ -60,9 +60,16 @@ export default function Home() {
           </div>
         </header>
 
+        {/* Form Section */}
+        <section className="bg-white p-5">
+          <div className="max-w-7xl mx-auto shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-tr-[3rem] md:rounded-tr-[8rem] rounded-bl-[3rem] md:rounded-bl-[8rem] overflow-hidden flex items-center justify-center">
+            <LeadForm />
+          </div>
+        </section>
+
         {/* Main Section */}
         <section className="container mx-auto px-4 py-24">
-          <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          <div className="grid gap-16 items-center max-w-7xl mx-auto">
             <div data-aos="fade-right">
               <h2 className="text-4xl font-bold text-purple-700 mb-6">
                 Are You Struggling with Debt?
@@ -99,9 +106,6 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </div>
-            <div data-aos="fade-left">
-              <LeadForm />
             </div>
           </div>
         </section>
