@@ -6,7 +6,7 @@ type Props = {
   message?: string;
 };
 
-export function FloatingWhatsApp({
+export default function FloatingWhatsApp({
   message = "Hello",
 }: Props) {
   // Example UK number (replace with your own if needed)

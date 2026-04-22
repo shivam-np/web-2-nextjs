@@ -3,7 +3,7 @@ import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Header } from "@/components/molecules/Header";
 import { Footer } from "@/components/molecules/Footer";
-import FloatingWhatsApp from "@/components/molecules/FloatingWhatsApp";
+import FloatingWhatsApp from "@/components/molecules/FloatingWhatsapp";
 
 export const metadata: Metadata = {
   title: "Get Help with Your Debt | UK Debt Solutions",
