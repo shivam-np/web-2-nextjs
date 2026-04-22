@@ -3,6 +3,7 @@ import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Header } from "@/components/molecules/Header";
 import { Footer } from "@/components/molecules/Footer";
+import FloatingWhatsApp from "@/components/molecules/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "Get Help with Your Debt | UK Debt Solutions",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FloatingWhatsApp />
       </body>
       <GoogleTagManager gtmId="AW-17688499544" />
     </html>
